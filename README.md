@@ -283,3 +283,34 @@ objects.foreach(accumulator2); // it is calling the accumulator2 callback for ea
 console.log(accumulator2());
 ```
 
+## Pure Functions
+
+Pure functions return a value computed using only the inputs passed to it. Outside variables and global states may not be used and there may be no side effects. In other words, it must not mutate the variables passed to it for input. Therefore, pure functions are only used for their returned value.
+
+```javascript
+var printSomewhere = function(str,height,width) {
+    var elem = document.createElement('div');
+    elem.textContent = str;
+    elem.style.position = 'absolute';
+    elem.style.top = height;
+    elem.style.left = width;
+    return elem;
+}
+
+document.body.appendChild(
+    printSomewhere('hello world',
+    (window.innerHeight/2)+10+'px',
+    (window.innerWidth/2)+10+'px'
+);
+```
+
+## Anonymous Functions
+
+```javascript
+function powersOf(x) {
+    return function(y) {
+        return Math.pow(x,y);
+    }
+}
+```
+
