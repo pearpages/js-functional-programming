@@ -314,3 +314,72 @@ function powersOf(x) {
 }
 ```
 
+## Method Chains
+
+It's sometimes called the "Builder Pattern". 
+
+```javascript
+var arr = [1,2,3,4];
+arr1 = arr.reverse();
+arr2 = arr1.concat([5,6]);
+arr3 = arr2.map(Math.sqrt); 
+
+// they can be chained to
+arr.reverse().concat([5,6]).map(Math.sqrt);
+```
+
+## Recursion 
+
+```javascript
+var getLeafs = function(node) {
+    if (node.childNodes.length == 0){
+        // base case
+        return node.innerText;
+    } else {
+        // recursive case
+        return node.childNodes.map(getLeafs);
+    }
+}
+```
+
+## Divide and Conquer
+
+```javascript
+function gcd(a,b) {
+    if (b == 0) {
+        // base case (conquer)
+        return a;
+    } else {
+        // recursive case (divide)
+        return gcd(b, a % b);
+    }
+}
+```
+
+## Lazy Evaluation
+
+Lazy evaluation, also known as nonstrict evaluation, call-by-need and deffered execution, is an evaluation strategy that waits until the value is needed to compute the result of a function and is particularly useful for functional programming.
+
+This strategy can result in a major increase in performance, especially when used with metohd chains an arrays, the favorite flow technique of the functional programmer.
+
+```javascript
+// wishful javascript pseudocode:
+var infinateNums = range (1 to infinity);
+var tenPrimes  = infinateNums.getPrimeNumbers().first(10);
+```
+
+> Javascript does not perform Lazy evaluation on its own.
+
+## The functional programmer's toolkit
+
+- map
+- filter
+- reduce
+
+They take a function as input and return an output with zero side effects.
+
+## Callbacks
+
+A callback function is used for passing to other functions for them to use.
+
+We cannot specify what arguments are passed to the callback functions. If we need different parameters we can wrap the callback function with an anonymous function.
