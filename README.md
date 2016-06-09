@@ -249,3 +249,37 @@ let makeTree = (categories,parent) => {
 console.log(makeTree(categories,null));
 ```
 
+## Self-invoking functions and closures
+
+```javascript
+var ValueAccumulator = function () {
+    var values = [];
+    var accumulate = function (obj) {
+        if (obj)  {
+            values.push(obj.value);
+            return values;
+        } else {
+            return values;
+        }
+    }
+    return accumulate;
+};
+
+var accumulator = ValueAccumulator();
+
+accumulator(obj1);
+accumulator(obj2);
+console.log(accumulator());
+```
+
+## High-order functions
+
+> They are functions that either take another function as the input or return a function as the output.
+
+```javascript
+var accumulator2 = ValueAccumulator();
+var objects = [obj1, obj2, obj3];
+objects.foreach(accumulator2); // it is calling the accumulator2 callback for each element
+console.log(accumulator2());
+```
+
