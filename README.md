@@ -1,3 +1,28 @@
+# Functional Programming
+
+Some languages that support Functional Programming and Object Programming at the same time:
+
+- Python
+- Ruby
+- Julia
+- Javascript
+
+However in the case of Javascript, the functional features are somewhat hidden.
+
+Essentially the language must implement *Lambda calculus*.
+
+## Advantages
+
+Functional programs are cleaner, simpler, and smaller. This simplifies debugging, testing, and maintenance.
+
+- Cleaner Code
+- Modularity
+- Reusability
+- Reduced Coupling
+- Mathematically Correct
+
+### Some keys 
+
 - Separate inputs from environment
 - Separate mutations from calculation
 
@@ -176,4 +201,40 @@ let lightingDragons =
     dragons.filter(hasElement('lighting'))
     
 console.log(lightingDragons);
+```
+
+## Recursion
+
+When a function it calls itself until it does.
+
+```javascript
+let countdown = (num) => {
+    console.log(num);
+    if (num > 0) {
+       countdown(num - 1); 
+    }
+};
+```
+
+```javascript
+let categories = [
+    {id: 'animals', parent: null},
+    {id: 'mammals', parent: 'animals'},
+    {id: 'cats', parent: 'mammals'},
+    {id: 'dogs', parent: 'mammals'},
+    {id: 'chihuahua', parent: 'dogs'},
+    {id: 'labrador', parent: 'dogs'},
+    {id: 'persian', parent: 'cats'},
+    {id: 'siamese', parent: 'cats'}
+];
+
+let makeTree = (categories,parent) => {
+  let node = {};
+  categories
+    .filter(c => c.parent === parent)
+    .forEach(c => node[c.id] = makeTree(categories,c.id));
+  return node;
+};
+
+console.log(makeTree(categories,null));
 ```
