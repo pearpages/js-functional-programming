@@ -26,6 +26,16 @@ Functional programs are cleaner, simpler, and smaller. This simplifies debugging
 - Separate inputs from environment
 - Separate mutations from calculation
 
+## About Javascript being Functional
+
+It is true that Javascript is not a pure functional language. What's lacking is lazy evaluation and built-in immutable data. This is because mos interpreters are call-by-name and not call-by-need. Javascript also isn't very good with recursion due to the way it handles tail calls. However, all of these issues can be mitigated with a little bit of attention.
+
+|Problem|Solution|
+|:--|:--|
+|Non-strict  evaluation|Lazy.js|
+|Immutable data|Programming technique/discipline|
+|Resursive tail elimination|Trampolining|
+
 ## Pure functions
 
 Functions that don't change anything.
@@ -238,3 +248,4 @@ let makeTree = (categories,parent) => {
 
 console.log(makeTree(categories,null));
 ```
+
