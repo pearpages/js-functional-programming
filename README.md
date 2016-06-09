@@ -99,6 +99,10 @@ var output = fs.readFilesSync('data.txt','utf8')
 
 ## Currying
 
+### What Is Currying?
+
+Briefly, currying is a way of constructing functions that allows partial application of a function’s arguments. What this means is that you can pass all of the arguments a function is expecting and get the result, or pass a subset of those arguments and get a function back that’s waiting for the rest of the arguments. It really is that simple.
+
 ```javascript
 let dragon = (name, size, element) => 
     name + ' is a ' +
@@ -118,4 +122,58 @@ let dragon =
                 element + '!';
                 
 console.log(dragon('fluffykins')('tyny')('lighting');
+```
+
+```javascript
+import _ from 'lodash';
+
+let dragon = (name, size, element) => 
+    name + ' is a ' +
+    size + ' dragon that breathes ' +
+    element + '!';
+    
+dragon = _.curry(dragon);    
+
+let fluffykinsDragon = dragon('fluffykins');
+let tinyDragon = fuffykinsDragon('tiny');
+
+console.log(tinyDragon('lighting'));
+```
+
+### Why is Currying useful?
+
+```javascript
+let dragons = [
+   {name: 'fluffykins', element: 'lighting'}, 
+   {name: 'noomi', element: 'lighting'}, 
+   {name: 'karo', element: 'fire'}, 
+   {name: 'doomer', element: 'timewarp'} 
+];
+
+let hasElement =
+    (element, obj) => obj.element === element
+    
+let lightingDragons = 
+    dragons.filter(x => hasElement('lighting', x))
+    
+console.log(lightingDragons);
+```
+
+```javascript
+import _ from 'lodash'
+
+let dragons = [
+   {name: 'fluffykins', element: 'lighting'}, 
+   {name: 'noomi', element: 'lighting'}, 
+   {name: 'karo', element: 'fire'}, 
+   {name: 'doomer', element: 'timewarp'} 
+];
+
+let hasElement = 
+    _.curry((element.obj) => obj.element === element)
+
+let lightingDragons =
+    dragons.filter(hasElement('lighting'))
+    
+console.log(lightingDragons);
 ```
