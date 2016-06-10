@@ -727,3 +727,25 @@ Formally, a function with N arguments can be transformed into a function chain o
 ### What is the difference between partial application and currying?
 
 It is that is that currying allows for much better control of how arguments are passed to the function.
+
+```javascript
+Function.prototype.curry = function (numArgs) {
+    var func = this;
+    numArgs = numArgs || func.length;
+    // recursively acquire the arguments
+    function subCurry(prev) {
+        return function (arg) {
+            var args = prev.concat(arg);
+            if (args.length < numArgs) {
+                // recursive case: we still need more args
+                return subCurry(args);
+            }
+            else {
+                // base case: apply the function
+                return func.apply(this, args);
+            }
+        };
+    }
+    return subCurry([]);
+};
+```
