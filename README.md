@@ -789,6 +789,8 @@ In functional programming, we want everything to be a function. We especially wa
 
 Composing functions allow us to build complex functions from many simple, generic functions.
 
+Compositions are read from right to left. Sequences from left to right.
+
 ```javascript
 var compose = function (f,g) {
     return function (x) {
@@ -816,4 +818,19 @@ console.log( composition('count') ); // returns 'count 1 2 3'
 
 Did you notice that the function3 parameter was applied first? This is very important. Functions are applied from right to left.
 
- 
+### Sequence - compose in reverse
+
+Because many people like to read things from left to the right, it might make sense to apply the functions in that order too. We call it sequence.
+
+```javascript
+Function.prototype.sequence = function (prevFunc) {
+    var nextFunc = this;
+    return function() {
+        return prevFunc.call(this,nextFunc.apply(this,arguments));
+    }
+}
+
+var sequences = function1.sequence(function2).sequence(function3);
+console.log(sequences('count')); // returns 'count 1 2 3';
+```
+
