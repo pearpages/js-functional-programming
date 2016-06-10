@@ -499,6 +499,7 @@ Each library promotes its own style of functional programming. From a rigid, mat
 
 - underscore.js
 - Fantasy Land
+- Bilby.js
 
 #### Underscore.js
 
@@ -524,3 +525,13 @@ Fantasy Land is a collection of functional base libraries and a formal specifica
 - chains
 - ...
 
+#### Bilby.js
+
+**bibly.js** library is compliant with Fantasy Land specifications.
+
+it provides:
+
+- Immutable multi-methods for ad-hoc polymorphism
+- Functional data structures
+- Operator overloading for functional syntax
+- Automated specification testing (ScalaCheck, QuickCheck)
