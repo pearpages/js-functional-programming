@@ -431,3 +431,45 @@ Generic scenarios are:
 |:--|:--|
 |numbers|Usually added together to get a sum or multiplied together to get a product|
 |strings|Usually the strings are appended together|
+
+## Honorable mentions
+
+- forEach
+- concat
+- reverse
+- sort
+- some
+
+### Array.prototype.forEach
+
+Essentially the **non-pure** version of map(). It itereates over an array and applies a *callback* function over each item.
+
+### Array.prototype.concat
+
+It lets us to join multiple arrays together. Leaves the old arrays untouched.
+
+```javascript
+console.log([1,2,3].concat(['a','b','c']);
+```
+
+```javascript
+var arr1 = [1,2,3];
+var arr2 = [4,5,6];
+var arr3 = [7,8,9];
+var x = arr1.concat(arr2, arr3);
+var y = arr1.concat(arr2).concat(arr3));
+var z = arr1.concat(arr2.concat(arr3)));
+console.log(x);
+console.log(y);
+console.log(z);
+```
+
+### Array.prototype.reverse
+
+```javascript
+
+```
+
+### Array.prototype.sort
+
+### Array.prototype.some
