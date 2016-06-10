@@ -559,3 +559,42 @@ Bacon.js is itself a library for functional reactive programming. Functional rea
 
 ---
 
+## Implementing Functional Programming Techniques in Javascript
+
+### Partial function application and currying
+
+Many languages support optional arguments, but not in Javascript. Javascript uses a diferent pattern entirely that allows for any number of arguments to be passed to a function. Function can be applied in a part or in whole.
+
+#### Partial Application
+
+It is the process of binding values to one or more arguments of a function that returns another function that accepts the remaining, unbound arguments.
+
+#### Currying
+
+It is the process of transforming a function with many arguments into a function with one argument that returns another function that takes more arguments as needed.
+
+## Apply, call, and the this keyword
+
+In pure functional languages, functions are not invoked; they're applied.
+
+### this
+
+Javascript works the same way and even provides utilities for manually calling and applying functions. And it's all about the *this* keyword, which, of course, is the object that the function is member of.
+
+### call
+
+The *call()* function lets you define the *this* keyword as the first argument.
+
+```javascript
+// normal way
+['Hello', 'world'].join(' ');
+
+// using call
+Array.prototype.join.call(['Hello', 'world'], ' '));
+```
+
+```javascript
+(function() {this.length}).call([1,2,3]);
+```
+
+
