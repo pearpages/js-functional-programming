@@ -615,3 +615,30 @@ function Drum() {
 var drum = new Drum();
 setInterval(drum.goBoom.bind(drum), drum.duration);
 ```
+
+## Function Factories
+
+Closures are the constructs that makes it possible to create a useful Javascript programming pattern known as function factories. They allow us to *manually bind* arguments to functions.
+
+```javascript
+function bindFirstArg(func, a) {
+    return function (b) {
+        return func(a,b);
+    }
+}
+
+var powersOfTwo = bindFirstArg(Math.pow, 2);
+console.log(powersOfTwo(3)); // 8
+console.log(powersOfTwo(5)); // 32
+```
+
+## Partial Application
+
+> Partial application ins the process of binding values to one or more arguments of a function that returns a partially-applied function that accepts the remaining, unbound arguments.
+
+There are two distinc ways to do this:
+
+- As a stand-alone function
+- As a polyfill
+
+Polyfills are used to augment prototypes with new functions and will allow us to call our new functions as methods of the function that we want to partially apply.
