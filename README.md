@@ -438,6 +438,7 @@ Generic scenarios are:
 - concat
 - reverse
 - sort
+- every
 - some
 
 ### Array.prototype.forEach
@@ -480,4 +481,11 @@ console.log( q );
 
 ### Array.prototype.sort
 
-### Array.prototype.some
+Also **non-pure** function, for sorting.
+
+### Array.prototype.every and Array.prototype.some
+
+These functions are both **pure** and **high-order**.
+
+*every()* return *true* if the *callback* function returns *true* for every element in the array, and the *some()* function returns *true* if some elements in the array are *true*.
+
