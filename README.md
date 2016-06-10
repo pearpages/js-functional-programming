@@ -489,3 +489,38 @@ These functions are both **pure** and **high-order**.
 
 *every()* return *true* if the *callback* function returns *true* for every element in the array, and the *some()* function returns *true* if some elements in the array are *true*.
 
+## Functional librares for Javascript
+
+How to use any library that enhances JavaScript's functional programming method.
+
+Each library promotes its own style of functional programming. From a rigid, mathbased style to a relaxed, informal style, each library is different but they all share one common feature: they all have abstract JavaScript functional capabilities to increase code re-use, readability, and robustness.
+
+### Libraries
+
+- underscore.js
+- Fantasy Land
+
+#### Underscore.js
+
+Underscore is actually the reimplementation of Ruby's *Enumerable* module, which explains why CoffeScript was also influenced by Ruby.
+
+- map
+- find
+- invoke 
+- pluck
+- sortBy
+- groupBy
+
+And it proves a way of chaining methods together.
+
+### Fantsasy Land
+
+Fantasy Land is a collection of functional base libraries and a formal specification for how to implement "algebraic structures" in JavaScript. More specifically, Fantasy Land specifies the interoperability of common algebraic structures, or algebras for short: monads, monoids, setoids, functors, chains, and more. Their names may sound scary, but they're just a set of values, a set of operators, and some laws it must obey. In other words, they're just objects.
+
+- monads
+- monoids
+- setoids
+- functors
+- chains
+- ...
+
