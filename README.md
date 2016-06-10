@@ -834,3 +834,20 @@ var sequences = function1.sequence(function2).sequence(function3);
 console.log(sequences('count')); // returns 'count 1 2 3';
 ```
 
+## Composition vs chains
+
+> The kind of conciseness that makes code easier to maintain is that which effectively reduces the specified instructions (for example, by using a simpler algorithm that accomplishes the same result with fewer and/or simpler steps), or when we simply replace code with a message, for instance, invoking a third-party library with a well-documented API.
+
+Composition and sequences are preferible to chains.
+
+### Programming with compose
+
+The most important aspect of compose is that, aside from the first function that is applied, it works best with **pure**, **unary** functions: functions that take only one argument.
+
+```javascript
+// 65
+```
+
+## Mostly functional programming
+
+> Keep most logic in pure functions and interface with imperative code.
