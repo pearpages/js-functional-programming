@@ -876,3 +876,20 @@ The most important aspect of compose is that, aside from the first function that
 
 ---
 
+## Category Theory
+
+By treating code as a discrete mathematical structure, we can apply concepts and ideas in math to it. This is what has made functional programming so instrumental in artificial intelligence, graph search, pattern recognition and other big challenges in
+computer science.
+
+- Category theory
+- Morphisms
+- Functors
+- Maybes
+- Promises
+- Lenses
+- Function composition
+
+**Categories** are just sets withs the same type.
+
+**Morphisms** are pure functions that, when given a specific set of inputs, always return the same otuput.
+
