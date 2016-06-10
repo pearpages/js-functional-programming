@@ -556,3 +556,6 @@ Lazy is a utility library more along the lines of the underscore.js library but 
 #### Bacon.js
 
 Bacon.js is itself a library for functional reactive programming. Functional reactive programming just means that functional design patterns are used to represent values that are reactive and always changing, like the position of the mouse on the screen, or the price of a company's stock.
+
+---
+
