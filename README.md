@@ -776,3 +776,44 @@ console.log(hexs(11)(12)); // returns 0b0c
 console.log(hexs(11)); // returns function
 console.log(hexs(110)(12)(0)); // incorrect
 ```
+
+## Function Composition
+
+In functional programming, we want everything to be a function. We especially want unary functions if possible.
+
+### Unary
+
+> **Unary** functions are functions that take only a single input. Functions with multiple inputs are **polyadic**, but we usually say *binary* for functions that accept two inputs and **ternary** for three inputs. Some functions don't accept a specific nubmer of inputs; we call those **variadic**.
+
+### Compose
+
+Composing functions allow us to build complex functions from many simple, generic functions.
+
+```javascript
+var compose = function (f,g) {
+    return function (x) {
+        return f(g(x));
+    }
+}
+```
+
+But if we left it at that, we would lose track of the this keyword, among other problems.
+
+```javascript
+Function.prototype.compose = function(prevFunc) {
+    var nextFunc = this;
+    return function() {
+        return nextFunc.call(this,prevFunc.apply(this,arguments));
+    }
+}
+
+function function1(a){return a + ' 1';}
+function function2(b){return b + ' 2';}
+function function3(c){return c + ' 3';}
+var composition = function3.compose(function2).compose(function1);
+console.log( composition('count') ); // returns 'count 1 2 3'
+```
+
+Did you notice that the function3 parameter was applied first? This is very important. Functions are applied from right to left.
+
+ 
