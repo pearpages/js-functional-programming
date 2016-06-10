@@ -423,3 +423,11 @@ console.log([-2,-1,0,1,2].filter(function(x){return x>0;}));
 
 ### Array.prototype.reduce()
 
+Sometimes called *fold*, the *reduce()* function is used to accumulate all the values fo the array into one. The callback needs to return the logic to be performed to combine the objects.
+
+Generic scenarios are:
+
+|Case|Use|
+|:--|:--|
+|numbers|Usually added together to get a sum or multiplied together to get a product|
+|strings|Usually the strings are appended together|
