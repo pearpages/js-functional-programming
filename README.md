@@ -398,5 +398,28 @@ function myCallback(currentValue,index,myArray) {
 ```
 
 ```javascript
-
+var integers = [1, -0, 9, -8, 3];
+// map returns a new array!
+console.log(integers.map(Math.abs),integers);
 ```
+
+### Array.prototype.filter()
+
+The filter() function is used to take elements out of an array. The callback must return *true* (to include the item in the new array) or *false* (to drop it).
+
+```javascript
+arr.filter(myCallback);
+arr.filter(myCallback,this);
+
+function myCallback(currentValue,index) {
+    // ...
+}
+```
+
+```javascript
+var myarray = [1,2,3,4];
+console.log([-2,-1,0,1,2].filter(function(x){return x>0;}));
+```
+
+### Array.prototype.reduce()
+
