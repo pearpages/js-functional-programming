@@ -692,3 +692,38 @@ console.log(shadesOfRed(100, 200)); // 'ff64c8'
 ```
 
 This example shows that we can partially apply arguments to a generic function and get a new function in return. This first example is left-to-right, which means that we can only partially apply the first, left-most arguments.
+
+## Partial appliation from the Right
+
+The biggest flaw in this method is that the way in which the arguments are passed, as in how many and in what order, can be ambiguous.
+
+```javascript
+Function.prototype.partialApplyRight = function () {
+    var func = this;
+    args = Array.prototype.slice.call(arguments);
+    return function () {
+        return func.apply(
+            this,
+            [].slice.call(arguments, 0)
+                .concat(args));
+    };
+};
+
+var shadesOfBlue = nums2hex.partialApplyRight(255);
+console.log(shadesOfBlue(123, 0)); // '7b00ff'
+console.log(shadesOfBlue(100, 200)); // '64c8ff'
+
+var someShadesOfGreen = nums2hex.partialApplyRight(255, 0);
+console.log(shadesOfGreen(123)); // '7bff00'
+console.log(shadesOfGreen(100)); // '64ff00'
+```
+
+## Currying
+
+> Currying is the process of transforming a function with many arguments into a function with one argument that returns another function that takes more arguments as needed.
+
+Formally, a function with N arguments can be transformed into a function chain of N functions, each with only one argument.
+
+### What is the difference between partial application and currying?
+
+It is that is that currying allows for much better control of how arguments are passed to the function.
