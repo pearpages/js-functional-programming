@@ -581,7 +581,7 @@ In pure functional languages, functions are not invoked; they're applied.
 
 Javascript works the same way and even provides utilities for manually calling and applying functions. And it's all about the *this* keyword, which, of course, is the object that the function is member of.
 
-### call
+### call()
 
 The *call()* function lets you define the *this* keyword as the first argument.
 
@@ -597,4 +597,21 @@ Array.prototype.join.call(['Hello', 'world'], ' '));
 (function() {this.length}).call([1,2,3]);
 ```
 
+### apply()
 
+The fundament difference is that, while the *call()* function accepts a list of arguments, the *apply()* function accepts an array of arguments.
+
+### bind()
+
+The *bind()* function allows you to apply a method to one object with the *this* keyword assigned to another. Internally, it's the same as the call() function, but it's chained to the method and returns a new bounded function.
+
+```javascript
+function Drum() {
+    this.noise = 'boom';
+    this.duration = 1000;
+    this.goBoom = function() {console.log(this.noise};
+}
+
+var drum = new Drum();
+setInterval(drum.goBoom.bind(drum), drum.duration);
+```
