@@ -383,3 +383,20 @@ They take a function as input and return an output with zero side effects.
 A callback function is used for passing to other functions for them to use.
 
 We cannot specify what arguments are passed to the callback functions. If we need different parameters we can wrap the callback function with an anonymous function.
+
+### Array.prototype.map()
+
+It simply applies the callback function on each item in the array.
+
+```javascript
+arr.map(myCallback);
+arr.map(myCallback,this);
+
+function myCallback(currentValue,index,myArray) {
+    // ...
+}
+```
+
+```javascript
+
+```
