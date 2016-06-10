@@ -500,6 +500,19 @@ Each library promotes its own style of functional programming. From a rigid, mat
 - underscore.js
 - Fantasy Land
 - Bilby.js
+- Lazy.js
+- Bacon.js
+- Functional
+- wu.js
+- sloth.js
+- stream.js
+- Lo-Dash.js
+- Sugar
+- from.js
+- JSLINQ
+- Boiler.js
+- Folktale
+- jQuery
 
 #### Underscore.js
 
@@ -535,3 +548,11 @@ it provides:
 - Functional data structures
 - Operator overloading for functional syntax
 - Automated specification testing (ScalaCheck, QuickCheck)
+
+#### Lazy.js
+
+Lazy is a utility library more along the lines of the underscore.js library but with a lazy evaluation strategy. Because of this, Lazy makes the impossible possible by functionally computing results of series that won't be available with immediate interpretation. It also boasts a significant performance boost.
+
+#### Bacon.js
+
+Bacon.js is itself a library for functional reactive programming. Functional reactive programming just means that functional design patterns are used to represent values that are reactive and always changing, like the position of the mouse on the screen, or the price of a company's stock.
