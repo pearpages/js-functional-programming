@@ -851,3 +851,28 @@ The most important aspect of compose is that, aside from the first function that
 ## Mostly functional programming
 
 > Keep most logic in pure functions and interface with imperative code.
+
+```javascript
+// 68
+```
+
+## Handling Events
+
+```javascript
+// 70
+```
+
+## Functional reactive programming
+
+```javascript
+// 71
+```
+
+## Reactivity
+
+```javascript
+// 72
+```
+
+---
+
