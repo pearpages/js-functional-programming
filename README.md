@@ -466,8 +466,16 @@ console.log(z);
 
 ### Array.prototype.reverse
 
-```javascript
+Reverses an array, but **it mutates** the original one. It is a *non-pure function**.
 
+```javascript
+var invert = function(arr) {
+    return arr.map(function(x, i, a) {
+        return a[a.length - (i+1)];
+    });
+};
+var q = invert([1,2,3,4]);
+console.log( q );
 ```
 
 ### Array.prototype.sort
