@@ -1,10 +1,12 @@
-function mult() {
-    var args = [].slice.call(arguments);
-    if (args.length == 2) {
-        return args[0] * args[1];
-    } else {
-        return args[0] * mult.apply(null,args.slice(1));
+function doubleIt(v) { return v * 2; }
+
+function transform(arr, fn) {
+    var list = [];
+    for (var i=0; i < arr.length; i++) {
+        list[i] = fn(arr[i]);
     }
+    return list;
 }
 
-console.log(mult(3,4,2));
+var x = transform([1,2,3,4,5],doubleIt);
+console.log(x);

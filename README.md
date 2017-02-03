@@ -148,3 +148,20 @@ function mult() {
 
 console.log(mult(3,4,2));
 ```
+
+## List transformation MAP
+
+```js
+function doubleIt(v) { return v * 2; }
+
+function transform(arr, fn) {
+    // the immutable way here is to create a new array
+    var list = [];
+    for (var i=0; i < arr.length; i++) {
+        list[i] = fn(arr[i]);
+    }
+    return list;
+}
+
+transform([1,2,3,4,5],doubleIt);
+```
