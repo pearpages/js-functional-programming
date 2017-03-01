@@ -64,3 +64,33 @@ multAndSum(3,4,5);
 ```js
 const w = Object.freeze([4,5,6]);
 ```
+
+## Clousre
+
+> **Closure** is when a function *remembers* the variables around it even when that function is executed elsewhere.
+
+```js
+function sumX (x) {
+    return function(y) {
+        return x + y
+    };
+}
+
+var add10 = sumX(10);
+
+add10(3); // 13
+add(14); // 24
+```
+
+```js
+function foo (x, y) {
+    return function () {
+        return x + y;
+    }
+}
+
+var x = foo(5,3);
+
+x(); // 8
+x(); // 8
+```
