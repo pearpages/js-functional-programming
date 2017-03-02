@@ -94,3 +94,57 @@ var x = foo(5,3);
 x(); // 8
 x(); // 8
 ```
+
+## Recursion
+
+* base case
+* tco. tail calls optimization
+
+> To be a proper *tail call* the last thing that has to occur is the call. e.g. ```return whatever(--x)```)
+
+* arguments are what you pass in
+* parameters what you receive in
+
+```js
+function sumRecur() {
+    var args = [].slice.call(arguments);
+    if (args.length <= 2) {
+        return args[0] + args[1];
+    }
+    return (
+        args[0] +
+        sumRecur.apply(null,args.slice(1))
+    );
+}
+
+console.log(sumRecur(1,2,3,4,5)); // 15
+```
+
+With ES6
+
+```js
+function sumRecur(...args) {
+    if (args.length <= 2) {
+        return args[0] + args[1];
+    }
+    return (
+        args[0] +
+        sumRecur(...args.slice(1))
+    );
+}
+
+console.log(sumRecur(3,4,5)); // 12
+```
+
+```js
+function mult() {
+    var args = [].slice.call(arguments);
+    if (args.length == 2) {
+        return args[0] * args[1];
+    } else {
+        return args[0] * mult.apply(null,args.slice(1));
+    }
+}
+
+console.log(mult(3,4,2));
+```
