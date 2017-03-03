@@ -1,12 +1,9 @@
-function doubleIt(v) { return v * 2; }
-
-function transform(arr, fn) {
-    var list = [];
-    for (var i=0; i < arr.length; i++) {
-        list[i] = fn(arr[i]);
-    }
-    return list;
+function mult() {
+    var args = [].slice.call(arguments);
+    var acc = 1;
+    return args.reduce(function (acc,current) {
+        return acc * current;
+    });
 }
 
-var x = transform([1,2,3,4,5],doubleIt);
-console.log(x);
+console.log(mult(1,3,5));

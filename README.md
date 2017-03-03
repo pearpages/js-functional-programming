@@ -179,3 +179,31 @@ function isOdd(v) { return v % 2 == 1; }
 
 [1,2,3,4,5].filter(isOdd);
 ```
+
+## List Composition (Reduce)
+
+```js
+function mult(x,y) {return x * y; }
+
+function compose(arr,fn,intitial) {
+    var total = initial;
+    for(var i=0; i < arr.length; i++) {
+        total = fun(total,arr[i]);
+    }
+    return total;
+}
+
+compose([1,2,3,4,5],mult,1);
+```
+
+```js
+function mult() {
+    var args = [].slice.call(arguments);
+    var acc = 1;
+    return args.reduce(function (acc,current) {
+        return acc * current;
+    });
+}
+
+console.log(mult(1,3,5));
+```
