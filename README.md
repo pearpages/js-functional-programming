@@ -149,7 +149,7 @@ function mult() {
 console.log(mult(3,4,2));
 ```
 
-## List transformation MAP
+## List transformation (MAP)
 
 ```js
 function doubleIt(v) { return v * 2; }
@@ -164,4 +164,18 @@ function transform(arr, fn) {
 }
 
 transform([1,2,3,4,5],doubleIt);
+
+// with js method
+
+[1,2,3,4,5].map(doubleIt);
+
+// which is not very functional way because doesn't let you do the composition in an orthodox way
+```
+
+## Exclusion (Filter)
+
+```js
+function isOdd(v) { return v % 2 == 1; }
+
+[1,2,3,4,5].filter(isOdd);
 ```
