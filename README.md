@@ -207,3 +207,9 @@ function mult() {
 
 console.log(mult(1,3,5));
 ```
+
+## Iterate (forEach)
+
+```js
+[1,2,3,5].foreach(function (v) { console.log(v)});
+```
