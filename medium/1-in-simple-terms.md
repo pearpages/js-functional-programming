@@ -28,3 +28,5 @@ we can cache the function outputs.
 ## Is JavaScript a Functional Programming Language?
 
 JavaScript is not a pure functional language (like Haskell) but rather a Multi-paradigm language. However the language is very much suitable for the functional programming paradigm.
+
+JavaScript treats functions as its first-class citizens.
