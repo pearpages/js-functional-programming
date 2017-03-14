@@ -1,0 +1,25 @@
+{
+  "name": "js-functional-programming",
+  "version": "1.0.0",
+  "description": "- Pure Functions - Composition - Immutability - Closure - Recursion - Map - Filter - Reduce",
+  "main": "foo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "playground": "babel-node functional-playground/play.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pearpages/js-functional-programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pearpages/js-functional-programming/issues"
+  },
+  "homepage": "https://github.com/pearpages/js-functional-programming#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-node6": "^11.0.0"
+  }
+}
