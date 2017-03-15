@@ -17,3 +17,5 @@ mylib.times(100, function (n) {
         console.log(n, "is even");
     });
 });
+
+console.log(mylib.every([NaN, NaN, NaN], isNaN));
