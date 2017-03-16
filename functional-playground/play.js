@@ -19,3 +19,5 @@ mylib.times(100, function (n) {
 });
 
 console.log(mylib.every([NaN, NaN, NaN], isNaN));
+
+console.log(mylib.some([NaN,NaN, 4], isNaN));
