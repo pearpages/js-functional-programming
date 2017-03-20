@@ -21,3 +21,15 @@ mylib.times(100, function (n) {
 console.log(mylib.every([NaN, NaN, NaN], isNaN));
 
 console.log(mylib.some([NaN,NaN, 4], isNaN));
+
+var people = [
+    {firstname: "aaFirstName", lastname: "cclastName"},
+    {firstname: "ccFirstName", lastname: "aalastName"},
+    {firstname:"bbFirstName", lastname:"bblastName"}
+];
+
+console.log(people.sort(mylib.sortBy("firstname")));
+
+mylib.forEach([1,2,3], function (e) {
+    mylib.tap(e)( () => console.log(e));
+});
