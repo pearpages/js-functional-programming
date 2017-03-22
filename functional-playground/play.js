@@ -33,3 +33,7 @@ console.log(people.sort(mylib.sortBy("firstname")));
 mylib.forEach([1,2,3], function (e) {
     mylib.tap(e)( () => console.log(e));
 });
+
+// using unary we ignore the rest of the parameters, we only take the first one
+console.log(['1','2','3'].map( mylib.unary(parseInt)));
+
