@@ -37,3 +37,21 @@ mylib.forEach([1,2,3], function (e) {
 // using unary we ignore the rest of the parameters, we only take the first one
 console.log(['1','2','3'].map( mylib.unary(parseInt)));
 
+let func = mylib.once( () => console.log('hello world!'));
+func(); // 'hello world!'
+func(); // undefined
+
+let factorial = function(n) {
+    if ( n === 0) {
+        return 1;
+    }
+
+    return n * factorial(n-1);
+};
+
+console.log(factorial(3));
+console.log(factorial(20));
+
+let fastFactorial = mylib.memoized(factorial);
+console.log(fastFactorial(5));
+console.log(fastFactorial(20));
