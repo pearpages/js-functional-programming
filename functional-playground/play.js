@@ -55,3 +55,5 @@ console.log(factorial(20));
 let fastFactorial = mylib.memoized(factorial);
 console.log(fastFactorial(5));
 console.log(fastFactorial(20));
+
+console.log([1,3,4].concat([5,6,7]));
