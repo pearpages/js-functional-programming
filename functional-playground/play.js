@@ -20,33 +20,33 @@ mylib.times(100, function (n) {
 
 console.log(mylib.every([NaN, NaN, NaN], isNaN));
 
-console.log(mylib.some([NaN,NaN, 4], isNaN));
+console.log(mylib.some([NaN, NaN, 4], isNaN));
 
 var people = [
-    {firstname: "aaFirstName", lastname: "cclastName"},
-    {firstname: "ccFirstName", lastname: "aalastName"},
-    {firstname:"bbFirstName", lastname:"bblastName"}
+    { firstname: "aaFirstName", lastname: "cclastName" },
+    { firstname: "ccFirstName", lastname: "aalastName" },
+    { firstname: "bbFirstName", lastname: "bblastName" }
 ];
 
 console.log(people.sort(mylib.sortBy("firstname")));
 
-mylib.forEach([1,2,3], function (e) {
-    mylib.tap(e)( () => console.log(e));
+mylib.forEach([1, 2, 3], function (e) {
+    mylib.tap(e)(() => console.log(e));
 });
 
 // using unary we ignore the rest of the parameters, we only take the first one
-console.log(['1','2','3'].map( mylib.unary(parseInt)));
+console.log(['1', '2', '3'].map(mylib.unary(parseInt)));
 
-let func = mylib.once( () => console.log('hello world!'));
+let func = mylib.once(() => console.log('hello world!'));
 func(); // 'hello world!'
 func(); // undefined
 
-let factorial = function(n) {
-    if ( n === 0) {
+let factorial = function (n) {
+    if (n === 0) {
         return 1;
     }
 
-    return n * factorial(n-1);
+    return n * factorial(n - 1);
 };
 
 console.log(factorial(3));
@@ -56,4 +56,9 @@ let fastFactorial = mylib.memoized(factorial);
 console.log(fastFactorial(5));
 console.log(fastFactorial(20));
 
-console.log([1,3,4].concat([5,6,7]));
+let sum = (x,y,z) => x + y + z;
+let newSum = mylib.curry(sum);
+console.log(newSum(1)(2)(3));
+
+let delayTenMs = mylib.partial(setTimeout,undefined,10);
+delayTenMs(() => console.log("Hello World"));
