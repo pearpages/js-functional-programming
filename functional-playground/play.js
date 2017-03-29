@@ -62,3 +62,6 @@ console.log(newSum(1)(2)(3));
 
 let delayTenMs = mylib.partial(setTimeout,undefined,10);
 delayTenMs(() => console.log("Hello World"));
+
+let parseRound = mylib.compose(Math.round, parseFloat);
+console.log(parseRound("3.56"));
