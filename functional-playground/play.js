@@ -65,3 +65,6 @@ delayTenMs(() => console.log("Hello World"));
 
 let parseRound = mylib.compose(Math.round, parseFloat);
 console.log(parseRound("3.56"));
+
+let countWords = mylib.compose((array) => array.length, (str) => str.split(" "));
+console.log("word count: ",countWords('hola mon com va la vida a tothom'));
