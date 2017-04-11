@@ -40,3 +40,10 @@ let filterBadBooks = (book) => book.rating[0] < 3.5;
 let projectTitleAndAuthor = (book) => { return {title: book.title,author:book.author} };
 let projectAuthor = (book) => { return {author:book.author}  };
 let projectTitle = (book) => { return {title: book.title} };
+
+// partials and compose
+let queryGoodBooks = mylib.partial(mylib.filter,undefined,filterGoodBooks);
+let mapTitleAndAuthor = mylib.partial(mylib.map,undefined,projectTitleAndAuthor);
+let titleAndAuthorForGoodBooks = mylib.compose(mapTitleAndAuthor,queryGoodBooks);
+
+console.log(titleAndAuthorForGoodBooks(apressBooks));
