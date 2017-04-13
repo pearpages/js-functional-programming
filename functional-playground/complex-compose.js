@@ -44,6 +44,19 @@ let projectTitle = (book) => { return {title: book.title} };
 // partials and compose
 let queryGoodBooks = mylib.partial(mylib.filter,undefined,filterGoodBooks);
 let mapTitleAndAuthor = mylib.partial(mylib.map,undefined,projectTitleAndAuthor);
+let mapTitle = mylib.partial(mylib.map,undefined,projectTitle);
+
 let titleAndAuthorForGoodBooks = mylib.compose(mapTitleAndAuthor,queryGoodBooks);
+let titleForGoodBooks = mylib.compose(mapTitle,queryGoodBooks);
 
 console.log(titleAndAuthorForGoodBooks(apressBooks));
+console.log(titleForGoodBooks(apressBooks));
+
+// ComposeN
+
+let splitIntoSpaces = (str) => str.split(" ");
+let count = (array) => array.length;
+let oddOrEven = (ip) => ip % 2 == 0 ? "even" : "odd";
+const oddOrEvenCountWords = mylib.composeN(oddOrEven,count,splitIntoSpaces);
+
+console.log(oddOrEvenCountWords("hello your reading about composition"));
