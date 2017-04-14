@@ -59,4 +59,9 @@ let count = (array) => array.length;
 let oddOrEven = (ip) => ip % 2 == 0 ? "even" : "odd";
 const oddOrEvenCountWords = mylib.composeN(oddOrEven,count,splitIntoSpaces);
 
-console.log(oddOrEvenCountWords("hello your reading about composition"));
+let phrase = "hello your reading about composition";
+console.log(oddOrEvenCountWords(phrase));
+
+// Using Pipe
+const oddOrEvenWords = mylib.pipe(splitIntoSpaces,count,oddOrEven);
+console.log(oddOrEvenWords(phrase));
