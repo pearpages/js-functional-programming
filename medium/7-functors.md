@@ -5,7 +5,7 @@
 ## Container
 
 ```js
-const Container = function val() {
+function Container(val) {
     this.value = val;
 }
 
@@ -28,7 +28,7 @@ let double = (x) => x * 2;
 console.log(Container.of(3).map(double).map(double).map(double));
 ```
 
-## MayBe
+## MayBe Functor
 
 MayBe is a type of Functor that deals with *null* or *undefined* values.
 
@@ -48,5 +48,5 @@ MayBe.prototype.map = function (fn) {
 }
 ```
 
-## Either
+## Either Functor
 
