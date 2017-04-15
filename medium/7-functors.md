@@ -50,3 +50,5 @@ MayBe.prototype.map = function (fn) {
 
 ## Either Functor
 
+```js
+```

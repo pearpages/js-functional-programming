@@ -7,3 +7,4 @@ let double = (x) => x * 2;
 
 console.log(mylib.Container.of(3).map(double).map(double).map(double));
 
+console.log(mylib.MayBe.of("George").map( () => undefined).map( (x) => 'Mr. '+x));
