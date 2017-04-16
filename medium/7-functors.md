@@ -2,6 +2,8 @@
 
 > **Functor** is a plain object (or type class in other languages) that implements the function map that, while running over each value in the object to produce a new object.
 
+> *Pointed Functor* is a subset of Functor, which has an interface that has a *of* contracts!
+
 ## Container
 
 ```js
