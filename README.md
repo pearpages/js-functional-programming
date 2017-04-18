@@ -9,6 +9,12 @@
 - Filter
 - Reduce
 
+## How to run the code
+
+```bash
+babel-node <file>
+```
+
 ## Pure Functions
 
 > We do not create side effects.
