@@ -31,3 +31,15 @@ function addn() {
 console.log(add2(foo,bar));
 console.log(add2(boo(23),boo(45)));
 console.log(addn(1,2,3,5 ));
+
+function fibonacci (n) {
+    if ( n < 2) {
+        return 1;
+    } else {
+        return fibonacci (n - 2) + fibonacci (n - 1);
+    }
+}
+
+let x = fibonacci;
+
+console.log(x(1),x(2),x(3),x(4),x(5));
